@@ -22,7 +22,7 @@ export const Avatar = ({ imgSrc, displayName }: AvatarProps) => {
   return (
     <motion.div
       whileHover={{
-        rotate: "5deg",
+        rotate: "8deg",
       }}
       transition={{
         duration: 0.3,

@@ -3,39 +3,17 @@ import type { NextPage } from "next";
 
 import { Layout } from "../components/Layout";
 import { Navigation } from "../components/Navigation";
-import { BarLink } from "../components/BarLink";
-import { Avatar } from "../components/Avatar";
+import { Bar } from "../components/Bar";
 import { Content } from "../components/Content";
+import { GhProjects } from "../components/GhProjects";
+import { NamePosition } from "../components/NamePosition";
+import { Copyright } from "../components/Copyright";
+import { ContactLinks } from "../components/ContactLinks";
 
 const ContentContainer = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
   margin: 0 auto;
   padding: 8rem 2rem;
-`;
-
-const AuthorContainer = styled.div`
-  display: flex;
-  flex-basis: 100%;
-  align-items: center;
-  margin: 8rem 0 0;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
-`;
-
-const AuthorName = styled.h2`
-  font-size: ${(props) => props.theme.spacing(4.5)}px;
-  color: ${(props) => props.theme.text};
-  transition-duration: 0.3s;
-  transition-property: color;
-  margin: 0;
-`;
-
-const Subtitle = styled.p`
-  color: ${(props) => props.theme.text};
-  margin: ${(props) => props.theme.spacing(1)}px 0;
-  font-size: ${(props) => props.theme.fontSize};
-  transition-duration: 0.3s;
-  transition-property: color;
 `;
 
 const Flex = styled.div`
@@ -53,15 +31,8 @@ const Flex = styled.div`
   }
 `;
 
-const Copyright = styled.p`
-  color: ${(props) => props.theme.text};
-  font-size: ${(props) => props.theme.fontSize};
-  transition-duration: 0.3s;
-  transition-property: color;
-  position: absolute;
-  bottom: ${(props) => props.theme.spacing(2)}px;
-  left: 50%;
-  transform: translateX(-50%);
+const Link = styled.a`
+  text-decoration: none;
 `;
 
 const Home: NextPage = () => {
@@ -69,18 +40,11 @@ const Home: NextPage = () => {
     <Layout>
       <Navigation />
       <ContentContainer>
-        <BarLink
-          href="mailto:mateuszromek.net@gmail.com"
-          text="Would you like to have your website? Feel free to contact me!"
-        />
+        <Link href="mailto:mateuszromek.net@gmail.com">
+          <Bar text="Would you like to have your website? Feel free to contact me!" />
+        </Link>
 
-        <AuthorContainer>
-          <div>
-            <AuthorName>Mateusz Romek</AuthorName>
-            <Subtitle>Frontend Developer</Subtitle>
-          </div>
-          <Avatar imgSrc="/image.png" displayName="MR" />
-        </AuthorContainer>
+        <NamePosition />
 
         <Content title="About">
           Hello, I&apos; m Mateusz and as you can see I&apos;m a frontend
@@ -109,13 +73,15 @@ const Home: NextPage = () => {
           </Flex>
         </Content>
 
-        <Content title="Sample side projects">Projects with gh button</Content>
+        <Content title="Sample side projects">
+          <GhProjects />
+        </Content>
 
-        <Content title="On the web">Links to linked in & github</Content>
+        <Content title="On the web">
+          <ContactLinks />
+        </Content>
 
-        <Copyright>
-          © {new Date().getFullYear()} Mateusz Romek. All Rights Reserved.
-        </Copyright>
+        <Copyright />
       </ContentContainer>
     </Layout>
   );
