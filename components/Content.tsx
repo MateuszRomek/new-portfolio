@@ -2,15 +2,18 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import React from "react";
 
+const Container = styled.div`
+  margin-top: 5.6rem;
+`;
+
 const Title = styled.h3`
-  font-size: ${(props) => props.theme.spacing(3)}px;
+  font-size: 2.2rem;
   color: ${(props) => props.theme.text};
-  margin: 0;
+  margin: 0 0 2rem;
   transition-duration: 0.3s;
   transition-property: color;
   position: relative;
-  padding-bottom: ${(props) => props.theme.spacing(1)}px;
-  margin-bottom: ${(props) => props.theme.spacing(2)}px;
+  padding-bottom: 1rem;
 
   &::after {
     content: "";
@@ -35,6 +38,7 @@ const Text = styled.div`
   font-weight: 300;
   padding-left: ${(props) => props.theme.spacing(1)}px;
   margin: ${(props) => props.theme.spacing(2)}px 0;
+  line-height: 2.2rem;
 `;
 
 type ContentProps = {
@@ -44,11 +48,11 @@ type ContentProps = {
 
 export const Content = ({ title, children }: ContentProps) => {
   return (
-    <div>
+    <Container>
       <motion.div whileHover={{ x: 8 }} transition={{ duration: 0.3 }}>
         <Title> {title} </Title>
       </motion.div>
       <Text>{children}</Text>
-    </div>
+    </Container>
   );
 };

@@ -8,17 +8,16 @@ import { Avatar } from "../components/Avatar";
 import { Content } from "../components/Content";
 
 const ContentContainer = styled.div`
-  max-width: 640px;
+  max-width: ${(props) => props.theme.maxWidth};
   margin: 0 auto;
-  padding: ${(props) => props.theme.spacing(10)}px
-    ${(props) => props.theme.spacing(3)}px;
+  padding: 8rem 2rem;
 `;
 
 const AuthorContainer = styled.div`
   display: flex;
   flex-basis: 100%;
   align-items: center;
-  margin: ${(props) => props.theme.spacing(5)}px 0 0;
+  margin: 8rem 0 0;
   justify-content: space-between;
   flex-wrap: wrap-reverse;
 `;
@@ -45,7 +44,7 @@ const Flex = styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   ul {
-    line-height: 1.8rem;
+    line-height: 2.3rem;
     padding-left: ${(props) => props.theme.spacing(2)}px;
   }
 
@@ -72,7 +71,7 @@ const Home: NextPage = () => {
       <ContentContainer>
         <BarLink
           href="mailto:mateuszromek.net@gmail.com"
-          text="Would you like to have your website? Feel free to contact me"
+          text="Would you like to have your website? Feel free to contact me!"
         />
 
         <AuthorContainer>
@@ -83,17 +82,17 @@ const Home: NextPage = () => {
           <Avatar imgSrc="/image.png" displayName="MR" />
         </AuthorContainer>
 
-        <Content title="Work">
-          Hello, I'm Mateusz and as you can see I'm a frontend developer,
-          currently working at Boldare as Frontend engineer. I've been building
-          stuff on the web for several years, I've made countless side projects
-          and I also posses magical powers to build delightful user interfaces.
-          I'm very comfortable with a variety of tools. Typically I'll be
-          digging in with React, TypeScript, RxJs but Node.js is also no
-          stranger to me.
+        <Content title="About">
+          Hello, I&apos; m Mateusz and as you can see I&apos;m a frontend
+          developer, currently working at Boldare as Frontend engineer.
+          I&apos;ve been building stuff on the web for several years, I&apos;ve
+          made countless side projects and I also posses magical powers to build
+          delightful user interfaces. I&apos;m very comfortable with a variety
+          of tools. Typically I&apos;ll be digging in with React, TypeScript,
+          RxJs but Node.js is also no stranger to me.
         </Content>
 
-        <Content title="Techonogies">
+        <Content title="Technologies">
           <Flex>
             <ul>
               <li>JavaScript</li>
@@ -110,11 +109,13 @@ const Home: NextPage = () => {
           </Flex>
         </Content>
 
-        <Content title="Sample side project">Projects with gh button</Content>
+        <Content title="Sample side projects">Projects with gh button</Content>
 
-        <Content title="On the web">Links</Content>
+        <Content title="On the web">Links to linked in & github</Content>
 
-        <Copyright>© 2021 Mateusz Romek. All Rights Reserved.</Copyright>
+        <Copyright>
+          © {new Date().getFullYear()} Mateusz Romek. All Rights Reserved.
+        </Copyright>
       </ContentContainer>
     </Layout>
   );
