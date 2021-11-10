@@ -16,9 +16,6 @@ const Container = styled.div<ContainerProps>`
   padding: ${(props) =>
     props.smallPadding ? props.theme.spacing(1) : props.theme.spacing(2)}px;
   border-radius: ${(props) => props.theme.spacing(1)}px;
-  transition-duration: 0.3s;
-  transition-property: filter, color;
-  border-bottom: 1px solid ${({ theme }) => theme.borderColor};
   background-color: ${({ theme }) => theme.body};
   color: ${(props) => props.theme.text};
   width: ${(props) => (props.width ? `${props.width}px` : "100%")};

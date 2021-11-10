@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { Button } from "./Button";
 import { ThemeButton } from "./ThemeButton";
 
 const NavigatioContainer = styled.div`
@@ -56,6 +57,7 @@ export const Navigation = () => {
             </motion.span>
           </motion.div>
         </Title>
+
         <ThemeButton />
       </FlexNavigation>
     </NavigatioContainer>
