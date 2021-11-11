@@ -26,8 +26,8 @@ const Flex = styled.div`
     padding-left: ${(props) => props.theme.spacing(2)}px;
   }
 
-  & ul:nth-child(2) {
-    margin-left: ${(props) => props.theme.spacing(3)}px;
+  & ul:nth-child(1) {
+    margin-right: ${(props) => props.theme.spacing(3)}px;
   }
 `;
 

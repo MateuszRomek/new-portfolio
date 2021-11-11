@@ -9,6 +9,7 @@ const NavigatioContainer = styled.div`
   transition-property: background-color, color;
   border-bottom: 1px solid ${({ theme }) => theme.borderColor};
   background-color: ${({ theme }) => theme.body};
+  padding: 0 ${(props) => props.theme.spacing(2)}px;
 `;
 
 const FlexNavigation = styled.nav`
