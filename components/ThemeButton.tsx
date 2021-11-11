@@ -1,9 +1,10 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "@emotion/styled";
-import Image from "next/image";
 
 import { useDarkModeContext } from "../context/darkModeContext";
+import DarkIcon from "../assets/dark.svg";
+import LightIcon from "../assets/light.svg";
 
 const Button = styled.button<{ isDarkMode: boolean | null | undefined }>`
   padding: ${({ theme }) => theme.spacing(1.3)}px;
@@ -19,6 +20,11 @@ const Button = styled.button<{ isDarkMode: boolean | null | undefined }>`
     cursor: pointer;
     background-color: ${(props) => (props.isDarkMode ? "#F8DA00" : "#B34BDE")};
   }
+
+  & svg {
+    height: 18px;
+    width: 18px;
+  }
 `;
 
 export const ThemeButton = () => {
@@ -33,13 +39,7 @@ export const ThemeButton = () => {
         transition={{ duration: 0.2 }}
       >
         <Button isDarkMode={context.isDarkMode} onClick={context.toggleTheme}>
-          <Image
-            loading="eager"
-            alt="theme mode button"
-            src={context.isDarkMode ? "/light.svg" : "/dark.svg"}
-            width={18}
-            height={18}
-          />
+          {context.isDarkMode ? <LightIcon /> : <DarkIcon />}
         </Button>
       </motion.div>
     </AnimatePresence>
