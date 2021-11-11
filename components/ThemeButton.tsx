@@ -34,6 +34,7 @@ export const ThemeButton = () => {
       >
         <Button isDarkMode={context.isDarkMode} onClick={context.toggleTheme}>
           <Image
+            loading="eager"
             alt="theme mode button"
             src={context.isDarkMode ? "/light.svg" : "/dark.svg"}
             width={18}
