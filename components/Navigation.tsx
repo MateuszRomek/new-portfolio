@@ -40,23 +40,7 @@ export const Navigation = () => {
   return (
     <NavigatioContainer>
       <FlexNavigation>
-        <Title>
-          <motion.div
-            initial="hidden"
-            whileHover="visible"
-            variants={initialVariants}
-            transition={{ duration: 0.1, type: "spring", stiffness: 250 }}
-          >
-            M
-            <motion.span style={{ pointerEvents: "none" }} variants={variants}>
-              ateusz
-            </motion.span>
-            R
-            <motion.span style={{ pointerEvents: "none" }} variants={variants}>
-              omek
-            </motion.span>
-          </motion.div>
-        </Title>
+        <Title>MR</Title>
 
         <ThemeButton />
       </FlexNavigation>
