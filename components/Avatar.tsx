@@ -31,6 +31,7 @@ export const Avatar = ({ imgSrc, displayName }: AvatarProps) => {
       <RoundedAvatar>
         {imgSrc ? (
           <Image
+            priority
             objectFit="contain"
             src={imgSrc}
             width={120}
