@@ -33,6 +33,7 @@ export const GhProjects = () => {
             href={project.link}
             target="_blank"
             referrerPolicy="no-referrer"
+            rel='noreferrer'
           >
             <Bar
               text={project.name}

@@ -38,7 +38,7 @@ export const ThemeButton = () => {
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <Button isDarkMode={context.isDarkMode} onClick={context.toggleTheme}>
+        <Button aria-label="Change theme"  isDarkMode={context.isDarkMode} onClick={context.toggleTheme}>
           {context.isDarkMode ? <LightIcon /> : <DarkIcon />}
         </Button>
       </motion.div>
