@@ -5,7 +5,7 @@ import { darkTheme, lightTheme } from "../styles/theme";
 import { useDarkModeContext } from "../context/darkModeContext";
 import styled from "@emotion/styled";
 
-const Div = styled.div`
+const ContentContainer = styled.div`
   transition-duration: 0.2s;
   transition-property: background-color, color;
   background-color: ${({ theme }) => theme.body2};
@@ -14,6 +14,12 @@ const Div = styled.div`
 
 export const Layout: React.FC = ({ children }) => {
   const context = useDarkModeContext();
+  const [isMounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <>
       <Head>
@@ -31,7 +37,7 @@ export const Layout: React.FC = ({ children }) => {
       </Head>
 
       <ThemeProvider theme={context.isDarkMode ? darkTheme : lightTheme}>
-        <Div>{children}</Div>
+       {isMounted && <ContentContainer>{children}</ContentContainer>}
       </ThemeProvider>
     </>
   );
