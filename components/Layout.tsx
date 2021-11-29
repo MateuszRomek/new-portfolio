@@ -23,7 +23,7 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Matusz Romek</title>
+        <title>Mateusz Romek</title>
         <meta property="og:url" content="http://www.mateuszromek.pl" />
         <meta
           property="og:description"
