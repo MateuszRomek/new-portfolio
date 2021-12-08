@@ -1,7 +1,7 @@
 const defaultTheme = {
   fontSize: "16px",
   spacing: (num: number = 1) => num * 8,
-  maxWidth: "768px",
+  maxWidth: "782px",
   borderColor: "rgba(0, 0, 0, 0.12)",
 };
 

@@ -26,7 +26,9 @@ const Container = styled.div<ContainerProps>`
 
 const IconWrapper = styled.div`
   margin-right: ${(props) => props.theme.spacing(2)}px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   & path {
     fill: ${(props) => props.theme.text};
   }
@@ -58,7 +60,9 @@ export const Bar = ({ text, icon: Icon, ...rest }: BarProps) => {
             <Icon />
           </IconWrapper>
         )}
+        <span>
         {text}
+        </span>
       </Container>
     </motion.div>
   );

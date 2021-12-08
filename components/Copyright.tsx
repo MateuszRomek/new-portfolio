@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const CopyrightText = styled.p`
   margin-top: ${(props) => props.theme.spacing(10)}px;
@@ -13,10 +14,14 @@ const CopyrightText = styled.p`
   justify-content: center;
 `;
 
+
 export const Copyright = () => {
+  const { t } = useTranslation();
+
   return (
     <CopyrightText>
-      © {new Date().getFullYear()} Mateusz Romek. All Rights Reserved.
+        {t('common:copyright', {year:new Date().getFullYear() })}
     </CopyrightText>
   );
 };
+

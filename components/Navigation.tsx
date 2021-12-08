@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 import { motion, Variants } from "framer-motion";
+import { useRouter } from 'next/router'
 import React from "react";
+import Link from 'next/link'
+
 import { Button } from "./Button";
 import { ThemeButton } from "./ThemeButton";
 
@@ -27,22 +30,12 @@ const Title = styled.h1`
   margin: ${(props) => props.theme.spacing(2)}px;
 `;
 
-const initialVariants: Variants = {
-  hidden: {},
-  visible: {},
-};
-
-const variants: Variants = {
-  hidden: { opacity: 0, x: -100, display: "none" },
-  visible: { opacity: 1, x: 0, display: "inline", marginRight: 8 },
-};
-
 export const Navigation = () => {
   return (
     <NavigatioContainer>
       <FlexNavigation>
         <Title>MR</Title>
-
+        
         <ThemeButton />
       </FlexNavigation>
     </NavigatioContainer>

@@ -36,9 +36,8 @@ const Text = styled.div`
   transition-property: color;
   color: ${(props) => props.theme.text};
   font-weight: 300;
-  padding-left: ${(props) => props.theme.spacing(1)}px;
   margin: ${(props) => props.theme.spacing(2)}px 0;
-  line-height: 2.2rem;
+  line-height: 2.3rem;
 `;
 
 type ContentProps = {

@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-import type { NextPage } from "next";
+import type { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from "react-i18next";
 
 import { Layout } from "../components/Layout";
 import { Navigation } from "../components/Navigation";
@@ -35,28 +37,34 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
+const P = styled.p`
+  margin: 0;
+`
+
 const Home: NextPage = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       <Navigation />
       <ContentContainer>
         <Link href="mailto:mateuszromek.net@gmail.com">
-          <Bar text="Would you like to have your website? Feel free to contact me!" />
+          <Bar text={t('about:contactMe')} />
         </Link>
 
         <NamePosition />
 
-        <Content title="About">
-          Hello, I&apos; m Mateusz and as you can see I&apos;m a frontend
-          developer, currently working at Boldare as Frontend engineer.
-          I&apos;ve been building stuff on the web for several years, I&apos;ve
-          made countless side projects and I also posses magical powers to build
-          delightful user interfaces. I&apos;m very comfortable with a variety
-          of tools. Typically I&apos;ll be digging in with React, TypeScript,
-          RxJs but Node.js is also no stranger to me.
+        <Content title={t('about:aboutTitle')}>
+          <P>
+          {t('about:aboutDescription')}
+          </P>
+          <P>
+          {t('about:aboutDescriptionAdditional')}
+          </P>
+          
         </Content>
 
-        <Content title="Technologies">
+        <Content title={t('about:technologies')}>
           <Flex>
             <ul>
               <li>JavaScript</li>
@@ -73,11 +81,11 @@ const Home: NextPage = () => {
           </Flex>
         </Content>
 
-        <Content title="Sample side projects">
+        <Content title={t('about:sideProjectsTitle')}>
           <GhProjects />
         </Content>
 
-        <Content title="On the web">
+        <Content title={t('about:onTheWebTitle')}>
           <ContactLinks />
         </Content>
 
@@ -88,3 +96,11 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps: GetStaticProps= async ({locale}) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale as string, ['common','about'])),
+    },
+  };
+}
