@@ -1,0 +1,28 @@
+@import "_colors";
+
+.heroContainer {
+  margin-left: 10%;
+  background-color: $yellow;
+  height: calc(100% - 15rem);
+  position: relative;
+  display: grid;
+  grid-template-rows: 75% 25%;
+  border-top-left-radius: 1rem;
+}
+
+.text {
+  padding: 5rem 4rem;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  max-width: 60%;
+
+  & h3 {
+    font-size: 5rem;
+  }
+
+  & p {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+  }
+}
