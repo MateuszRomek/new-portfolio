@@ -8,7 +8,7 @@ import LightIcon from "../assets/light.svg";
 
 const Button = styled.button<{ isDarkMode: boolean | null | undefined }>`
   padding: ${({ theme }) => theme.spacing(1.3)}px;
-  border-radius: ${({ theme }) => theme.spacing()}px;
+  border-radius: ${({ theme }) => theme.spacing(1)}px;
   border: none;
   display: flex;
   align-items: center;
