@@ -38,13 +38,13 @@ const InProgress = styled.span<{ isDarkMode: boolean | null | undefined }>`
 
 const projects = [
   {
-    name: "Detailer",
-    link: "https://github.com/MateuszRomek/detaling",
+    name: "DB Diagram",
+    link: "https://github.com/MateuszRomek/db-diagram",
     inProgress: true,
   },
   {
-    name: "HR Soft",
-    link: "https://github.com/MateuszRomek/hrsoft",
+    name: "Detailer",
+    link: "https://github.com/MateuszRomek/detaling",
     inProgress: true,
   },
   {
@@ -66,7 +66,6 @@ export const GhProjects = () => {
     <>
       {projects.map((project) => (
         <LinkContainer key={project.name}>
-        
           <GhLink
             href={project.link}
             target="_blank"
