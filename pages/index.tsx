@@ -5,7 +5,6 @@ import { Layout } from "../components/Layout";
 import { Navigation } from "../components/Navigation";
 import { Bar } from "../components/Bar";
 import { Content } from "../components/Content";
-import { GhProjects } from "../components/GhProjects";
 import { NamePosition } from "../components/NamePosition";
 import { Copyright } from "../components/Copyright";
 import { ContactLinks } from "../components/ContactLinks";
@@ -71,10 +70,6 @@ const Home: NextPage = () => {
               <li>Styled Components & SASS</li>
             </ul>
           </Flex>
-        </Content>
-
-        <Content title="Sample side projects">
-          <GhProjects />
         </Content>
 
         <Content title="On the web">
